@@ -1,0 +1,221 @@
+/* SOC Dashboard - Unified Personal Cyber Risk Engine */
+
+:root {
+  --bg-dark: #0f172a;
+  --bg-panel: #1e293b;
+  --border: #334155;
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --accent-red: #ef4444;
+  --accent-amber: #f59e0b;
+  --accent-green: #22c55e;
+  --accent-blue: #3b82f6;
+  --accent-violet: #8b5cf6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.header {
+  text-align: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.subtitle {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section {
+  width: 100%;
+}
+
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+
+.panel h3 {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.empty {
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 0.5rem 0;
+}
+
+/* Risk Dashboard */
+.risk-dashboard {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .risk-dashboard {
+    grid-template-columns: 1fr;
+  }
+}
+
+.event-list {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.event-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr 60px 70px auto;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+
+.event-row.anomaly {
+  background: rgba(245, 158, 11, 0.15);
+}
+
+.event-row.high-risk {
+  background: rgba(239, 68, 68, 0.15);
+}
+
+.event-row .time {
+  color: var(--text-muted);
+}
+
+.event-row .user {
+  font-weight: 600;
+  color: var(--accent-blue);
+}
+
+.event-row .type {
+  color: var(--text);
+}
+
+.event-row .mitre {
+  color: var(--accent-violet);
+  font-family: monospace;
+}
+
+.event-row .score {
+  color: var(--accent-amber);
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+.anomaly-badge {
+  background: var(--accent-amber);
+  color: #000;
+}
+
+.high-badge {
+  background: var(--accent-red);
+  color: #fff;
+}
+
+.risk-scores .alerts-block,
+.risk-scores .chains-block {
+  margin-bottom: 1rem;
+}
+
+.alert-title {
+  color: var(--accent-red);
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+}
+
+.chain-title {
+  color: var(--accent-amber);
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+}
+
+.risk-scores ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.user-scores {
+  margin-top: 0.75rem;
+}
+
+.user-score-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem 0;
+  font-size: 0.9rem;
+}
+
+.user-score-row.high {
+  color: var(--accent-red);
+  font-weight: 600;
+}
+
+/* Timeline */
+.attack-timeline {
+  min-height: 320px;
+}
+
+/* Attack Graph */
+.attack-graph {
+  position: relative;
+}
+
+.attack-graph .overlay {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+/* AI Summary */
+.summary-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.summary-text p {
+  margin: 0;
+  white-space: pre-wrap;
+}

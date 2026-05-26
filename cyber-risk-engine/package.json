@@ -1,0 +1,12 @@
+{
+  "name": "cyber-risk-engine",
+  "version": "1.0.0",
+  "description": "Unified Personal Cyber Risk Engine - Cyber defense platform prototype",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "backend": "cd backend && node server.js",
+    "frontend": "cd frontend && npm start",
+    "start": "npm run backend"
+  }
+}
